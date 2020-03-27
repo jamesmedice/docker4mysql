@@ -28,9 +28,8 @@ spec:
       - image: mysql:5.6
         name: mysql
         env:
-          # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
-          value: password
+          value: tpm1234
         ports:
         - containerPort: 3306
           name: mysql
@@ -40,4 +39,4 @@ spec:
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          claimName: mysql-persistent-volume-claim
